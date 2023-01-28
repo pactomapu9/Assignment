@@ -2,8 +2,6 @@ package utility;
 
 import java.time.Duration;
 
-import org.apache.log4j.Logger;
-import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,7 +26,7 @@ public class Find {
 		
 		switch(by) {
 		case "xpath":
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locator)));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
 			element = driver.findElement(By.xpath(locator));
 			FindTheBook.Log.info("WebElement found successfully by xpath");
 			break;
@@ -41,11 +39,6 @@ public class Find {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(locator)));
 			element = driver.findElement(By.cssSelector(locator));
 			FindTheBook.Log.info("WebElement found successfully by css");
-			break;
-		case "parameter":
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
-			element = driver.findElement(By.xpath(locator));
-			FindTheBook.Log.info("WebElement found successfully by parameters");
 			break;
 		}
 		

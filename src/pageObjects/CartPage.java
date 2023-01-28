@@ -9,10 +9,10 @@ import utility.Find;
 public class CartPage {
 
 	final public static String sDelete = "//*[@value='Delete']";
-	final public static String sDeleteBy = "parameter";
+	final public static String sDeleteBy = "xpath";
 	
 	final public static String sItemName = "//*[text()=\""+ TestData.sItemName +"\"]";
-	final public static String sItemNameBy = "parameter";
+	final public static String sItemNameBy = "xpath";
 	
 	
 	// WebElement of Delete button
